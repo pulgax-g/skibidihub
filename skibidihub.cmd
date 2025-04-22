@@ -42,7 +42,7 @@ echo    │         └───────────────┘   │   
 echo    ├─[91m{1}RANSOMWARE      [[92mI[91m][31m      ├─[91m{6}REMOTE CONTROLL PC   [[92mI[91m][31m  ├─[94m{11}discord[31m
 echo    ├─[91m{2}SHURDOWN PC     [[92mI[91m][31m      ├─[91m{7}BRUTEFORCE PC PASS   [[92mI[91m][31m  └─[37m{22}exit[31m
 echo    ├─[91m{3}RAT             [[92mI[91m][31m      ├─[91m{8}BRUTEFORCE WIFI PASS [[92mI[91m][31m                           
-echo    ├─[91m{4}SPAM WEBSITE    [[92mI[91m][31m      └─[91m{9}BRUTEFORCE 7-zip .zip file PASS [[92mI[91m][31m
+echo    ├─[91m{4}SPAM WEBSITE    [[92mI[91m][31m      └─[91m{9}BRUTEFORCE 7-zip PASS[[92mI[91m][31m
 echo    └─[91m{5}MID KILL PC     [[92mI[91m][31m
 set /p selected=.──type the number─»[38;2;255;255;0m
 if /I %selected% EQU 1 goto ransomware
