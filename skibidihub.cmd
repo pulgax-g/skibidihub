@@ -1,5 +1,5 @@
 @echo off
-title skibidihub dsc.gg/disscordserver
+title skibidihub dsc.gg/skibidihub - made by skibidipulgax
 mode 90,20
 chcp 65001>nul
 setlocal
@@ -41,8 +41,8 @@ echo  └─┬─────────┤  [91mEXPLOTE PC[31m   ├──�
 echo    │         └───────────────┘   │     └─────────┘              │       └───────┘
 echo    ├─[91m{1}RANSOMWARE      [[92mI[91m][31m      ├─[91m{6}REMOTE CONTROLL PC   [[92mI[91m][31m  ├─[94m{11}discord[31m
 echo    ├─[91m{2}SHURDOWN PC     [[92mI[91m][31m      ├─[91m{7}BRUTEFORCE PC PASS   [[92mI[91m][31m  └─[37m{22}exit[31m
-echo    ├─[91m{3}RAT             [[92mI[91m][31m      └─[91m{8}BRUTEFORCE WIFI PASS [[92mI[91m][31m                           
-echo    ├─[91m{4}SPAM WEBSITE    [[92mI[91m][31m
+echo    ├─[91m{3}RAT             [[92mI[91m][31m      ├─[91m{8}BRUTEFORCE WIFI PASS [[92mI[91m][31m                           
+echo    ├─[91m{4}SPAM WEBSITE    [[92mI[91m][31m      └─[91m{9}BRUTEFORCE 7-zip .zip file PASS [[92mI[91m][31m
 echo    └─[91m{5}MID KILL PC     [[92mI[91m][31m
 set /p selected=.──type the number─»[38;2;255;255;0m
 if /I %selected% EQU 1 goto ransomware
@@ -53,6 +53,7 @@ if /I %selected% EQU 5 goto midkill
 if /I %selected% EQU 6 goto rpc
 if /I %selected% EQU 7 goto brutf
 if /I %selected% EQU 8 goto brutfwif
+if /I %selected% EQU 9 goto brutfzip
 if /I %selected% EQU 11 goto discord
 if /I %selected% EQU 22 goto exit
 pause >nul
@@ -1928,6 +1929,60 @@ goto :eof
         call :trim_left %1
         call :trim_right %1
 goto :eof
+
+:brutfzip
+cls
+title skibidi 7-zip cracker
+color 3
+echo   ██████  ██ ▄█▀ ██▓ ▄▄▄▄    ██▓▓█████▄  ██▓      ▄████▄   ▄████▄  
+echo ▒██    ▒  ██▄█▒ ▓██▒▓█████▄ ▓██▒▒██▀ ██▌▓██▒     ▒██▀ ▀█  ▒██▀ ▀█  
+echo ░ ▓██▄   ▓███▄░ ▒██▒▒██▒ ▄██▒██▒░██   █▌▒██▒     ▒▓█    ▄ ▒▓█    ▄ 
+echo   ▒   ██▒▓██ █▄ ░██░▒██░█▀  ░██░░▓█▄   ▌░██░     ▒▓▓▄ ▄██▒▒▓▓▄ ▄██▒
+echo ▒██████▒▒▒██▒ █▄░██░░▓█  ▀█▓░██░░▒████▓ ░██░ ██▓ ▒ ▓███▀ ░▒ ▓███▀ ░
+echo ▒ ▒▓▒ ▒ ░▒ ▒▒ ▓▒░▓  ░▒▓███▀▒░▓   ▒▒▓  ▒ ░▓   ▒▓▒ ░ ░▒ ▒  ░░ ░▒ ▒  ░
+echo ░ ░▒  ░ ░░ ░▒ ▒░ ▒ ░▒░▒   ░  ▒ ░ ░ ▒  ▒  ▒ ░ ░▒    ░  ▒     ░  ▒   
+echo ░  ░  ░  ░ ░░ ░  ▒ ░ ░    ░  ▒ ░ ░ ░  ░  ▒ ░ ░   ░        ░        
+echo       ░  ░  ░    ░   ░       ░     ░     ░    ░  ░ ░      ░ ░      
+echo                           ░      ░            ░  ░        ░        
+if not exist "C:\Program Files\7-Zip" (
+	echo install 7-zip dumb
+	echo instal it at https://7-zip.org/download.html
+	pause
+	exit
+)
+
+echo.
+echo [tip] drag the file over or copy the access directory
+set /p archive="Enter Archive: "
+if not exist "%archive%" (
+	echo Archive not found! [tip] drag it over
+	pause
+	exit
+)
+
+set /p wordlist="Enter Wordlist: "
+if not exist "%wordlist%" (
+	echo Wordlist not found!
+	pause
+	exit
+)
+echo skibidi cracking this dumb file
+for /f %%a in (%wordlist%) do (
+	set pass=%%a
+	call :attempt
+)
+echo search a better skibidi wordlist or download one of our discordd :c
+pause
+exit
+
+:attemptzip
+"C:\Program Files\7-Zip\7za.exe" x -p%pass% "%archive%" -o"cracked" -y >nul 2>&1
+echo ATTEMPT : %pass%
+if /I %errorlevel% EQU 0 (
+	echo great! dumb pass: %pass%
+	pause
+	exit
+)
 
 :discord
 start 
